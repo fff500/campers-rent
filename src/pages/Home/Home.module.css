@@ -1,4 +1,23 @@
+.pageWrapper {
+  padding: 72px 0;
+}
+
 .pageTitle {
+  margin-bottom: 56px;
   text-align: center;
   color: var(--color-main);
+}
+
+.description {
+  margin-bottom: 40px;
+  font-size: 24px;
+  color: var(--color-headlines-text);
+}
+
+.catalogLink {
+  color: var(--color-secondary);
+}
+
+.catalogLink:hover {
+  text-decoration: underline;
 }
