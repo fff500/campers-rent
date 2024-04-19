@@ -1,7 +1,12 @@
 :root {
   --color-main: #e44848;
+  --color-secondary: #ffc531;
+  --color-body-text: #475467;
+  --color-headlines-text: #101828;
 
-  --font-weight-headlines: 600;
+  --font-weight-normal: 400;
+  --font-weight-semi-bold: 500;
+  --font-weight-bold: 600;
   --font-size-h1: 36px;
   --font-size-h2: 24px;
 }
