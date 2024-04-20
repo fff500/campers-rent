@@ -13,7 +13,7 @@
 
 .navLink {
   font-weight: var(--font-weight-semi-bold);
-  color: var(--color-headlines-text);
+  color: var(--color-black);
 }
 
 .navLink:hover,
