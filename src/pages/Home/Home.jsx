@@ -4,7 +4,7 @@ import styles from './Home.module.css';
 
 const Home = () => {
   return (
-    <div className={styles.pageWrapper}>
+    <>
       <h1 className={styles.pageTitle}>Campers Rent</h1>
       <p className={styles.description}>We rent out campers.</p>
       <p>
@@ -14,7 +14,7 @@ const Home = () => {
         </Link>
         .
       </p>
-    </div>
+    </>
   );
 };
 
