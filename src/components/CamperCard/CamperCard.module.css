@@ -81,6 +81,11 @@
   align-items: center;
 }
 
+.locationIcon {
+  fill: none;
+  stroke: var(--color-black);
+}
+
 .description {
   margin-bottom: 24px;
 }

@@ -1,7 +1,5 @@
 import { Button } from '../ui-kit/Button/Button';
 import defaultImage from '../../images/default-camper-image.png';
-import starIcon from '../../images/star-icon.svg';
-import locationIcon from '../../images/location-icon.svg';
 import sprite from '../../images/icons/sprite.svg';
 
 import styles from './CamperCard.module.css';
@@ -24,11 +22,15 @@ export const CamperCard = () => {
         </div>
         <div className={styles.ratingLocationContainer}>
           <div className={styles.ratingContainer}>
-            <img src={starIcon} alt="Star" width="16" height="16" />
+            <svg width="16" height="16">
+              <use xlinkHref={`${sprite}#star`} />
+            </svg>
             <span className={styles.rating}>4.4 (2 Reviews)</span>
           </div>
           <div className={styles.locationContainer}>
-            <img src={locationIcon} alt="Location" width="16" height="16" />
+            <svg className={styles.locationIcon} width="16" height="16">
+              <use xlinkHref={`${sprite}#location`} />
+            </svg>
             <span>Kyiv, Ukraine</span>
           </div>
         </div>
