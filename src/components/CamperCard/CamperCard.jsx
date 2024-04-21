@@ -7,13 +7,10 @@ import { FeatureItem } from './FeatureItem/FeatureItem';
 import styles from './CamperCard.module.css';
 
 export const CamperCard = ({ camper }) => {
-  console.log(camper);
   const { description, gallery, location, name, price, rating, reviews } =
     camper;
 
   const features = useGenerateFeatureItems(camper);
-
-  console.log(features);
 
   return (
     <div className={styles.card}>
@@ -52,9 +49,9 @@ export const CamperCard = ({ camper }) => {
         </div>
         <div className={styles.description}>{description}</div>
         <div className={styles.details}>
-          {Object.entries(features).map((feture) => {
+          {features.map((feture) => {
             const [key, value] = feture;
-            return <FeatureItem iconId={key} title={value} />;
+            return <FeatureItem key={key} iconId={key} title={value} />;
           })}
         </div>
         <Button>Show more</Button>

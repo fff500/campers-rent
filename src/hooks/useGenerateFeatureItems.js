@@ -1,30 +1,28 @@
 export const useGenerateFeatureItems = (camper) => {
-  const {
+  const { adults, transmission, engine, details } = camper;
+
+  const featuresObject = Object.entries({
     adults,
     transmission,
     engine,
-    ...details
-  } = camper;
+    ...details,
+  }).reduce((acc, cur) => {
+    if (cur[1]) acc[cur[0]] = cur[1];
+    return acc;
+  }, {});
 
-  const { beds, hob, gas, water } = details;
+  return Object.entries(featuresObject).map((feature) => {
+    const [key, value] = feature;
 
-  return {
-    adults: `${adults} Adults`,
-    transmission: `${transmission}`,
-    engine: `${engine}`,
-    airConditioner: 'AC',
-    bathroom: 'Bathroom',
-    kitchen: 'Kitchen',
-    beds: `${beds} Beds`,
-    TV: 'TV',
-    CD: 'CD',
-    radio: 'Radio',
-    shower: 'Shower',
-    toilet: 'Toilet',
-    freezer: 'Freezer',
-    hob: `${hob} hob`,
-    microwave: 'Microwave',
-    gas: `${gas} gas`,
-    water: `${water} water`,
-  }
-}
+    if (key === 'airConditioner') return [key, `${value} air conditioner`];
+    if (
+      key === 'transmission' ||
+      key === 'engine' ||
+      key === 'gas' ||
+      key === 'water'
+    )
+      return [key, `${value}`];
+
+    return [key, `${value} ${key}`];
+  });
+};

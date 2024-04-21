@@ -6,10 +6,9 @@
   padding: 12px 18px 12px 18px;
   height: 44px;
   border-radius: 100px;
+  font-weight: var(--font-weight-semi-bold);
+  line-height: 1.25;
+  text-transform: capitalize;
+  color: var(--color-black);
   background-color: var(--color-gray);
-}
-
-.featureIcon {
-  fill: var(--color-black);
-  stroke: var(--color-black);
 }
