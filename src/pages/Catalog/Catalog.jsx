@@ -6,13 +6,12 @@ import styles from './Catalog.module.css';
 const Catalog = () => {
   return (
     <>
-      <div>
-        <ul className={styles.cardsList}>
-          <li>
-            <CamperCard />
-          </li>
-        </ul>
-      </div>
+      <h1>Catalog</h1>
+      <ul className={styles.cardsList}>
+        <li>
+          <CamperCard />
+        </li>
+      </ul>
       <Button variant="transparent">Load more</Button>
     </>
   );

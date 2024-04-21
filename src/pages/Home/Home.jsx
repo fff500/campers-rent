@@ -5,7 +5,7 @@ import styles from './Home.module.css';
 const Home = () => {
   return (
     <>
-      <h1 className={styles.pageTitle}>Campers Rent</h1>
+      <h1>Campers Rent</h1>
       <p className={styles.description}>We rent out campers.</p>
       <p>
         Look what we got for you in our{' '}

@@ -1,4 +1,5 @@
 .card {
+  position: relative;
   display: flex;
   gap: 24px;
   width: 888px;
@@ -12,6 +13,7 @@
   width: 290px;
   height: 310px;
   border-radius: 10px;
+  background-color: var(--color-gray);
   overflow: hidden;
 }
 
@@ -22,11 +24,68 @@
   object-fit: fill;
 }
 
+.title {
+  margin-bottom: 8px;
+}
+
+.priceFavoriteButtonContainer {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.price {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-black);
+}
+
+.fovoriteButton {
+  width: 24px;
+  height: 24px;
+}
+
+.fovoriteButtonIcon {
+  stroke: var(--color-black);
+  fill: none;
+}
+
+.fovoriteButtonIcon:hover {
+  stroke: var(--color-main);
+  fill: var(--color-main);
+}
+
 .ratingLocationContainer {
   display: flex;
   gap: 16px;
+  margin-bottom: 24px;
+  color: var(--color-black);
+}
+
+.ratingContainer {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.rating {
+  text-decoration: underline;
+}
+
+.locationContainer {
+  display: flex;
+  gap: 4px;
+  align-items: center;
 }
 
 .description {
   margin-bottom: 24px;
+}
+
+.details {
+  margin-bottom: 24px;
+  height: 96px;
 }
