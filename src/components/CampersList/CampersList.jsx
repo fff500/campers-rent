@@ -8,13 +8,13 @@ import styles from './CampersList.module.css';
 export const CampersList = () => {
   const campers = useSelector(getCampers);
 
-  console.log(campers);
-
   return (
     <ul className={styles.campersList}>
-      <li>
-        <CamperCard />
-      </li>
+      {campers.map((camper) => (
+        <li>
+          <CamperCard camper={camper} />
+        </li>
+      ))}
     </ul>
   );
 };

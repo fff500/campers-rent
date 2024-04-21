@@ -22,11 +22,15 @@
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: cover;
 }
 
 .title {
   margin-bottom: 8px;
+  width: 320px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .priceFavoriteButtonContainer {
@@ -89,6 +93,10 @@
 
 .description {
   margin-bottom: 24px;
+  width: 524px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .details {
