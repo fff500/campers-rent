@@ -2,6 +2,7 @@ import { Button } from '../ui-kit/Button/Button';
 import defaultImage from '../../images/default-camper-image.png';
 import sprite from '../../images/icons/sprite.svg';
 
+import { FeatureItem } from './FeatureItem/FeatureItem';
 import styles from './CamperCard.module.css';
 
 export const CamperCard = () => {
@@ -37,7 +38,15 @@ export const CamperCard = () => {
         <div className={styles.description}>
           The pictures shown here are example vehicles of the respective.
         </div>
-        <div className={styles.details}>Details</div>
+        <div className={styles.details}>
+          <FeatureItem iconId={'transmission'} title={'automatic'} />
+          <FeatureItem iconId={'transmission'} title={'automatic'} />
+          <FeatureItem iconId={'fuel'} title={'petrol'} />
+          <FeatureItem iconId={'transmission'} title={'automatic'} />
+          <FeatureItem iconId={'transmission'} title={'automatic'} />
+          <FeatureItem iconId={'transmission'} title={'automatic'} />
+          <FeatureItem iconId={'transmission'} title={'automatic'} />
+        </div>
         <Button>Show more</Button>
       </div>
     </div>

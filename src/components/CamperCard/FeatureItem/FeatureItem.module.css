@@ -1,0 +1,15 @@
+.feature {
+  flex-grow: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px 12px 18px;
+  height: 44px;
+  border-radius: 100px;
+  background-color: var(--color-gray);
+}
+
+.featureIcon {
+  fill: var(--color-black);
+  stroke: var(--color-black);
+}
