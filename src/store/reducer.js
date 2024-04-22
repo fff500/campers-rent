@@ -2,14 +2,19 @@ import storage from 'redux-persist/lib/storage';
 import persistReducer from 'redux-persist/es/persistReducer';
 
 import { campersReducer } from './campersSlice';
+import { favoritesReducer } from './favoritesSlice';
 
 const persistConfig = {
-  key: 'campers',
+  key: 'favorites',
   storage,
-}
+};
 
-const persistedCampersReducer = persistReducer(persistConfig, campersReducer);
+const persistedFavoritesReducer = persistReducer(
+  persistConfig,
+  favoritesReducer
+);
 
 export const reducer = {
-  campers: persistedCampersReducer,
+  campers: campersReducer,
+  favorites: persistedFavoritesReducer,
 };

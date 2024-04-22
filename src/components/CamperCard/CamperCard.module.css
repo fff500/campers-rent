@@ -58,6 +58,7 @@
   fill: none;
 }
 
+.fovoriteButtonIcon.isFavorite,
 .fovoriteButtonIcon:hover {
   stroke: var(--color-main);
   fill: var(--color-main);
