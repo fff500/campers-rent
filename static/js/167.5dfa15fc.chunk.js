@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkcampers_rent=self.webpackChunkcampers_rent||[]).push([[167],{167:(e,s,a)=>{a.r(s),a.d(s,{default:()=>o});var r=a(475);const t="Home_description__1R53M",c="Home_catalogLink__J6NA6";var n=a(579);const o=()=>(0,n.jsxs)(n.Fragment,{children:[(0,n.jsx)("h1",{children:"Campers Rent"}),(0,n.jsx)("p",{className:t,children:"We rent out campers."}),(0,n.jsxs)("p",{children:["Look what we got for you in our"," ",(0,n.jsx)(r.N_,{className:c,to:"/catalog",children:"Catalog"}),"."]}),"Test"]})}}]);
+//# sourceMappingURL=167.5dfa15fc.chunk.js.map
