@@ -1,13 +1,15 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-axios.defaults.baseURL = 'https://662511de04457d4aaf9dbca1.mockapi.io';
+import { BASE_URL, ITEMS_PER_PAGE } from './constants/constants';
+
+axios.defaults.baseURL = BASE_URL;
 
 export const fetchCampers = createAsyncThunk(
   'campers/fetchAll',
-  async (_, thunkAPI) => {
+  async (page, thunkAPI) => {
     try {
-      const response = await axios.get('/campers');
+      const response = await axios.get('/campers', { params: { page, limit: ITEMS_PER_PAGE }});
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

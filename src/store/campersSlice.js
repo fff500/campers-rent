@@ -1,8 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 import { fetchCampers } from './operations';
+import { ITEMS_PER_PAGE } from './constants/constants';
 
 const campersInitialState = {
   items: [],
+  page: 1,
+  showLoadMoreButton: true,
   isLoading: false,
   error: null,
 };
@@ -18,7 +22,11 @@ const campersSlice = createSlice({
       .addCase(fetchCampers.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.items = action.payload;
+        state.items = [...state.items, ...action.payload];
+        state.page = state.page + 1;
+        if (action.payload.length < ITEMS_PER_PAGE) {
+          state.showLoadMoreButton = false;
+        }
       })
       .addCase(fetchCampers.rejected, (state, action) => {
         state.isLoading = false;
