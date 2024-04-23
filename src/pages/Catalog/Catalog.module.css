@@ -1,4 +1,9 @@
-.loadMoreButton {
-  display: block;
-  margin: 0 auto;
+.contentContainer {
+  display: flex;
+  gap: 64px;
+}
+
+.filter {
+  flex-shrink: 0;
+  width: 360px;
 }

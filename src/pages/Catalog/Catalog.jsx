@@ -2,21 +2,17 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { CampersList } from '../../components/CampersList/CampersList';
-import { Button } from '../../components/ui-kit/Button/Button';
+import { CampersFilter } from '../../components/CampersFilter/CampersFilter';
+import { useApplayFilters } from '../../hooks/useApplayFilters';
 import { fetchCampers } from '../../store/operations';
-import {
-  getCampers,
-  getShowLoadMoreButton,
-  getPage,
-} from '../../store/selectors';
+import { getPage } from '../../store/selectors';
 
 import styles from './Catalog.module.css';
 
 const Catalog = () => {
   const dispatch = useDispatch();
-  const campers = useSelector(getCampers);
   const page = useSelector(getPage);
-  const showLoadMoreButton = useSelector(getShowLoadMoreButton);
+  const campersToShow = useApplayFilters();
 
   useEffect(() => {
     dispatch(fetchCampers(page));
@@ -26,16 +22,14 @@ const Catalog = () => {
   return (
     <>
       <h1>Catalog</h1>
-      <CampersList campers={campers} />
-      {showLoadMoreButton && (
-        <Button
-          className={styles.loadMoreButton}
-          variant="transparent"
-          onClick={() => dispatch(fetchCampers(page))}
-        >
-          Load more
-        </Button>
-      )}
+      <div className={styles.contentContainer}>
+        <div className={styles.filter}>
+          <CampersFilter />
+        </div>
+        <div className={styles.catalog}>
+          <CampersList campers={campersToShow} />
+        </div>
+      </div>
     </>
   );
 };

@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Button } from '../ui-kit/Button/Button';
-import defaultImage from '../../images/default-camper-image.png';
-import sprite from '../../images/icons/sprite.svg';
 import { useGenerateFeatureItems } from '../../hooks/useGenerateFeatureItems';
 import { addFavorite, removeFavorite } from '../../store/favoritesSlice';
 import { getFavorites } from '../../store/selectors';
+import defaultImage from '../../images/default-camper-image.png';
+import sprite from '../../images/icons/sprite.svg';
 
 import { FeatureItem } from './FeatureItem/FeatureItem';
 import styles from './CamperCard.module.css';

@@ -5,3 +5,8 @@
 .campersList li:not(:last-child) {
   margin-bottom: 32px;
 }
+
+.loadMoreButton {
+  display: block;
+  margin: 0 auto;
+}
