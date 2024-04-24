@@ -13,7 +13,7 @@ let persistor = persistStore(store);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store}>
-    <BrowserRouter>
+    <BrowserRouter basename='/campers-rent'>
       <PersistGate persistor={persistor}>
         <App />
       </PersistGate>
