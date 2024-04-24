@@ -14,23 +14,21 @@ export const ModalWindow = ({ isOpen, onClose, children }) => {
       <Transition in={isOpen} timeout={350} unmountOnExit={true}>
         {(state) => (
           <div
-            className={`${styles.modalContainer} ${styles[`modal--${state}`]}`}
+            className={`${styles.modalContainer} ${
+              styles[`modal--${state}`]
+            } backdrop`}
+            onClick={handleBackdropClick}
           >
-            <div
-              className={`${styles.backdrop} backdrop`}
-              onClick={handleBackdropClick}
-            >
-              <div className={styles.modalContent}>
-                <button
-                  className={styles.modalCloseButton}
-                  onClick={() => onClose()}
-                >
-                  <svg width="32" height="32">
-                    <use xlinkHref={`${sprite}#close`} />
-                  </svg>
-                </button>
-                {children}
-              </div>
+            <div className={styles.modalContent}>
+              <button
+                className={styles.modalCloseButton}
+                onClick={() => onClose()}
+              >
+                <svg width="32" height="32">
+                  <use xlinkHref={`${sprite}#close`} />
+                </svg>
+              </button>
+              {children}
             </div>
           </div>
         )}

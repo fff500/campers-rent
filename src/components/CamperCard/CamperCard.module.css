@@ -64,36 +64,8 @@
   fill: var(--color-main);
 }
 
-.ratingLocationContainer {
-  display: flex;
-  gap: 16px;
-  margin-bottom: 24px;
-  color: var(--color-black);
-}
-
-.ratingContainer {
-  display: flex;
-  gap: 4px;
-  align-items: center;
-}
-
-.rating {
-  text-decoration: underline;
-}
-
-.locationContainer {
-  display: flex;
-  gap: 4px;
-  align-items: center;
-}
-
-.locationIcon {
-  fill: none;
-  stroke: var(--color-black);
-}
-
 .description {
-  margin-bottom: 24px;
+  margin: 24px 0;
   width: 524px;
   white-space: nowrap;
   text-overflow: ellipsis;

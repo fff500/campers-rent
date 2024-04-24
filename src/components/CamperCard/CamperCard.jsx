@@ -2,10 +2,12 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Button } from '../ui-kit/Button/Button';
+import { ModalWindow } from '../ui-kit/ModalWindow/ModalWindow';
+import { CamperInfoModal } from '../CamperInfoModal/CamperInfoModal';
+import { RatingLocationBlock } from '../RatingLocationBlock/RatingLocationBlock';
 import { useGenerateFeatureItems } from '../../hooks/useGenerateFeatureItems';
 import { addFavorite, removeFavorite } from '../../store/favoritesSlice';
 import { getFavorites } from '../../store/selectors';
-import { ModalWindow } from '../ui-kit/ModalWindow/ModalWindow';
 import defaultImage from '../../images/default-camper-image.png';
 import sprite from '../../images/icons/sprite.svg';
 
@@ -58,22 +60,11 @@ export const CamperCard = ({ camper }) => {
               </svg>
             </button>
           </div>
-          <div className={styles.ratingLocationContainer}>
-            <div className={styles.ratingContainer}>
-              <svg width="16" height="16">
-                <use xlinkHref={`${sprite}#star`} />
-              </svg>
-              <span className={styles.rating}>
-                {rating} ({reviews.length} Reviews)
-              </span>
-            </div>
-            <div className={styles.locationContainer}>
-              <svg className={styles.locationIcon} width="16" height="16">
-                <use xlinkHref={`${sprite}#location`} />
-              </svg>
-              <span>{location.split(', ').reverse().join(', ')}</span>
-            </div>
-          </div>
+          <RatingLocationBlock
+            rating={rating}
+            reviewsQuantity={reviews.length}
+            location={location}
+          />
           <div className={styles.description}>{description}</div>
           <div className={styles.details}>
             {features.map((feture) => {
@@ -85,7 +76,7 @@ export const CamperCard = ({ camper }) => {
         </div>
       </div>
       <ModalWindow isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        Test
+        <CamperInfoModal camper={camper} />
       </ModalWindow>
     </>
   );
