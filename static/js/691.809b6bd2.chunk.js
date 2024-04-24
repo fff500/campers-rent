@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkcampers_rent=self.webpackChunkcampers_rent||[]).push([[691],{500:(e,s,r)=>{r.r(s),r.d(s,{default:()=>h});var t=r(3),a=r(980),n=r(708),c=r(579);const h=()=>{const e=(0,t.d4)(a.qM);return(0,c.jsxs)(c.Fragment,{children:[(0,c.jsx)("h1",{children:"Favorites"}),!!e.length&&(0,c.jsx)(n._,{campers:e,favorites:e}),!e.length&&"It's empty here. Please, add some camper to favorites first."]})}}}]);
+//# sourceMappingURL=691.809b6bd2.chunk.js.map
