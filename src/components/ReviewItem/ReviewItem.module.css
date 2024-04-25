@@ -1,0 +1,9 @@
+.rating {
+  display: flex;
+  gap: 4px;
+}
+
+.starIcon {
+  fill: var(--color-gray);
+  stroke: var(--color-gray);
+}

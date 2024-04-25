@@ -6,7 +6,7 @@ export const RatingLocationBlock = ({ rating, reviewsQuantity, location }) => {
   return (
     <div className={styles.ratingLocationContainer}>
       <div className={styles.ratingContainer}>
-        <svg width="16" height="16">
+        <svg className={styles.starIcon} width="16" height="16">
           <use xlinkHref={`${sprite}#star`} />
         </svg>
         <span className={styles.rating}>

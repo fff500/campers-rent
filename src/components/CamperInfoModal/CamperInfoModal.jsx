@@ -9,7 +9,7 @@ import styles from './CamperInfoModal.module.css';
 export const CamperInfoModal = ({ camper }) => {
   const { _id, description, gallery, location, name, price, rating, reviews } =
     camper;
-  console.log(camper);
+
   return (
     <>
       <h2 className={styles.title}>{name}</h2>
@@ -20,8 +20,8 @@ export const CamperInfoModal = ({ camper }) => {
       />
       <div className={styles.price}>{`€${price.toFixed(2)}`}</div>
       <div className={styles.gallery}>
-        {gallery.map((item) => (
-          <div className={styles.imageContainer}>
+        {gallery.map((item, index) => (
+          <div className={styles.imageContainer} key={`${_id}_image_${index}`}>
             <img
               src={item || defaultImage}
               alt="Camper title"
@@ -39,7 +39,7 @@ export const CamperInfoModal = ({ camper }) => {
                 className={({ isActive }) =>
                   `${styles.tabLink} ${isActive && styles.active}`
                 }
-                to={'features'}
+                to={`features/${_id}`}
               >
                 Features
               </NavLink>
@@ -49,7 +49,7 @@ export const CamperInfoModal = ({ camper }) => {
                 className={({ isActive }) =>
                   `${styles.tabLink} ${isActive && styles.active}`
                 }
-                to={'reviews'}
+                to={`reviews/${_id}`}
               >
                 Reviews
               </NavLink>

@@ -1,4 +1,12 @@
 export const getCampers = ({ campers }) => campers.items;
+export const getCamper =
+  (id) =>
+  ({ campers }) =>
+    campers.items.find(({ _id }) => _id === id);
+export const getCamperReviews =
+  (id) =>
+  ({ campers }) =>
+    campers.items.find(({ _id }) => _id === id).reviews;
 export const getPage = ({ campers }) => campers.page;
 export const getShowLoadMoreButton = ({ campers }) =>
   campers.showLoadMoreButton;
