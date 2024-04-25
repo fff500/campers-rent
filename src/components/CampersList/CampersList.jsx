@@ -16,7 +16,7 @@ export const CampersList = ({ campers }) => {
     <>
       <ul className={styles.campersList}>
         {campers.map((camper) => (
-          <li key={camper._id}>
+          <li className={styles.camperItem} key={camper._id}>
             <CamperCard camper={camper} />
           </li>
         ))}

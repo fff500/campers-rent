@@ -20,6 +20,7 @@
   padding: 40px;
   transform: translateX(-50%);
   transition: opacity 0.3s, transform 0.3s;
+  overflow-y: scroll;
 }
 
 .modalCloseButton {

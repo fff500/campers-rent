@@ -2,6 +2,8 @@ import { lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import { Layout } from './components/layout/Layout/Layout';
+import { FeaturesBlock } from './components/FeaturesBlock/FeaturesBlock';
+import { ReviewsBlock } from './components/ReviewsBlock/ReviewsBlock';
 
 const Home = lazy(() => import('./pages/Home/Home'));
 const Catalog = lazy(() => import('./pages/Catalog/Catalog'));
@@ -12,7 +14,10 @@ const App = () => {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path="/catalog" element={<Catalog />} />
+        <Route path="/catalog" element={<Catalog />}>
+          <Route path="features" element={<FeaturesBlock />} />
+          <Route path="reviews" element={<ReviewsBlock />} />
+        </Route>
         <Route path="/favorites" element={<Favorites />} />
         <Route path="*" element={<Home />} />
       </Route>

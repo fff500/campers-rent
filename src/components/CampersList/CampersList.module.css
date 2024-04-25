@@ -2,7 +2,7 @@
   margin-bottom: 50px;
 }
 
-.campersList li:not(:last-child) {
+.campersList .camperItem:not(:last-child) {
   margin-bottom: 32px;
 }
 
