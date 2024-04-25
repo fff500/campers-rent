@@ -1,0 +1,8 @@
+.reviewsList {
+  height: 532px;
+  overflow-y: scroll;
+}
+
+.reviewItem:not(:last-child) {
+  margin-bottom: 24px;
+}

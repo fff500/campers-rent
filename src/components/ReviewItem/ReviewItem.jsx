@@ -5,32 +5,51 @@ import styles from './ReviewItem.module.css';
 export const ReviewItem = ({ review }) => {
   const { comment, reviewer_name, reviewer_rating } = review;
 
+  const createRatingStars = () => {
+    const stars = [];
+
+    for (let i = 0; i < 5; i++) {
+      let star;
+      if (i < Math.floor(reviewer_rating)) {
+        star = (
+          <svg
+            className={`${styles.starIcon} ${styles.painted}`}
+            width="16"
+            height="16"
+          >
+            <use xlinkHref={`${sprite}#star`} />
+          </svg>
+        );
+      } else {
+        star = (
+          <svg className={`${styles.starIcon}`} width="16" height="16">
+            <use xlinkHref={`${sprite}#star`} />
+          </svg>
+        );
+      }
+
+      stars.push(star);
+    }
+
+    return stars;
+  };
+
   return (
     <div>
-      <div className="reviewTop">
-        <div className="avatar"></div>
-        <div className="ratingTitleContainer">
-          <h3 className="title">{reviewer_name}</h3>
+      <div className={styles.reviewTop}>
+        <div className={styles.avatar}>
+          <span>{reviewer_name.charAt(0)}</span>
+        </div>
+        <div>
+          <h3 className={styles.title}>{reviewer_name}</h3>
           <div className={styles.rating}>
-            <svg className={styles.starIcon} width="16" height="16">
-              <use xlinkHref={`${sprite}#star`} />
-            </svg>
-            <svg className={styles.starIcon} width="16" height="16">
-              <use xlinkHref={`${sprite}#star`} />
-            </svg>
-            <svg className={styles.starIcon} width="16" height="16">
-              <use xlinkHref={`${sprite}#star`} />
-            </svg>
-            <svg className={styles.starIcon} width="16" height="16">
-              <use xlinkHref={`${sprite}#star`} />
-            </svg>
-            <svg className={styles.starIcon} width="16" height="16">
-              <use xlinkHref={`${sprite}#star`} />
-            </svg>
+            {createRatingStars().map((star, index) => (
+              <span key={`${index}_star`}>{star}</span>
+            ))}
           </div>
         </div>
-        <div className="description">{comment}</div>
       </div>
+      <div className="description">{comment}</div>
     </div>
   );
 };

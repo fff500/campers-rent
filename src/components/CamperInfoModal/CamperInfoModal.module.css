@@ -75,9 +75,10 @@
 }
 
 .featuresReviewsWrapper {
-  flex-grow: 1;
+  width: 430px;
 }
 
 .formWrapper {
   flex-grow: 1;
+  height: 532px;
 }
