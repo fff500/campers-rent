@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { Button } from '../ui-kit/Button/Button';
 import { ModalWindow } from '../ui-kit/ModalWindow/ModalWindow';
+import { FeatureItem } from '../FeatureItem/FeatureItem';
 import { CamperInfoModal } from '../CamperInfoModal/CamperInfoModal';
 import { RatingLocationBlock } from '../RatingLocationBlock/RatingLocationBlock';
 import { useGenerateFeatureItems } from '../../hooks/useGenerateFeatureItems';
@@ -11,7 +12,6 @@ import { getFavorites } from '../../store/selectors';
 import defaultImage from '../../images/default-camper-image.png';
 import sprite from '../../images/icons/sprite.svg';
 
-import { FeatureItem } from './FeatureItem/FeatureItem';
 import styles from './CamperCard.module.css';
 
 export const CamperCard = ({ camper }) => {

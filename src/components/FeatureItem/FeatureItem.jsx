@@ -1,4 +1,4 @@
-import sprite from '../../../images/icons/sprite.svg';
+import sprite from '../../images/icons/sprite.svg';
 
 import styles from './FeatureItem.module.css';
 

@@ -76,6 +76,8 @@
 
 .featuresReviewsWrapper {
   width: 430px;
+  height: 532px;
+  overflow-y: scroll;
 }
 
 .formWrapper {
