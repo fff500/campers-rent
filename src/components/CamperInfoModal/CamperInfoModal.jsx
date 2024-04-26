@@ -63,7 +63,7 @@ export const CamperInfoModal = ({ camper }) => {
             </Suspense>
           </div>
           <div className={styles.formWrapper}>
-            <form action="bla">Form</form>
+            <form>Form</form>
           </div>
         </div>
       </div>

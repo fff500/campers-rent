@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Button } from '../ui-kit/Button/Button';
@@ -16,6 +17,7 @@ import styles from './CamperCard.module.css';
 
 export const CamperCard = ({ camper }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const favorites = useSelector(getFavorites);
 
@@ -27,6 +29,11 @@ export const CamperCard = ({ camper }) => {
   const handleFavoritesButtonClick = () => {
     if (isFavorite) dispatch(removeFavorite(_id));
     else dispatch(addFavorite(camper));
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    navigate('/catalog', { replace: true });
   };
 
   const features = useGenerateFeatureItems(camper);
@@ -75,9 +82,11 @@ export const CamperCard = ({ camper }) => {
           <Button onClick={() => setIsModalOpen(true)}>Show more</Button>
         </div>
       </div>
-      <ModalWindow isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <CamperInfoModal camper={camper} />
-      </ModalWindow>
+      {isModalOpen && (
+        <ModalWindow isOpen={isModalOpen} onClose={handleCloseModal}>
+          <CamperInfoModal camper={camper} />
+        </ModalWindow>
+      )}
     </>
   );
 };

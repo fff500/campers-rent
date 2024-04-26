@@ -7,9 +7,11 @@ import styles from './ModalWindow.module.css';
 
 export const ModalWindow = ({ isOpen, onClose, children }) => {
   const documentRef = useRef(document);
+  const bodyRef = useRef(document.body);
 
   useEffect(() => {
     const documentRefCurrent = documentRef.current;
+    const bodyRefCurrent = bodyRef.current;
 
     const handleEscClick = (event) => {
       if (event.key !== 'Escape') return;
@@ -18,9 +20,11 @@ export const ModalWindow = ({ isOpen, onClose, children }) => {
     };
 
     documentRefCurrent.addEventListener('keydown', handleEscClick);
+    bodyRefCurrent.style.overflow = 'hidden';
 
     return () => {
       documentRefCurrent.removeEventListener('keydown', handleEscClick);
+      bodyRefCurrent.style.overflow = 'visible';
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
