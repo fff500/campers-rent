@@ -10,7 +10,7 @@ const Favorites = () => {
     <>
       <h1>Favorites</h1>
       {!!favorites.length && (
-        <CampersList campers={favorites} favorites={favorites} />
+        <CampersList campers={favorites} showLoadMore={false} />
       )}
       {!favorites.length &&
         "It's empty here. Please, add some camper to favorites first."}

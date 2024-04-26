@@ -7,7 +7,7 @@ import { fetchCampers } from '../../store/operations';
 
 import styles from './CampersList.module.css';
 
-export const CampersList = ({ campers }) => {
+export const CampersList = ({ campers, showLoadMore = true }) => {
   const dispatch = useDispatch();
   const showLoadMoreButton = useSelector(getShowLoadMoreButton);
   const page = useSelector(getPage);
@@ -21,7 +21,7 @@ export const CampersList = ({ campers }) => {
           </li>
         ))}
       </ul>
-      {showLoadMoreButton && (
+      {showLoadMore && showLoadMoreButton && (
         <Button
           className={styles.loadMoreButton}
           variant="transparent"
