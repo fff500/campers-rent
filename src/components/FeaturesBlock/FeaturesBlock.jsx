@@ -16,7 +16,7 @@ export const FeaturesBlock = () => {
   const features = useGenerateFeatureItems(camper);
 
   return (
-    <div>
+    <>
       <div className={styles.featuresContainer}>
         {features.map((feture) => {
           const [key, value] = feture;
@@ -54,6 +54,6 @@ export const FeaturesBlock = () => {
           </tbody>
         </table>
       </div>
-    </div>
+    </>
   );
 };

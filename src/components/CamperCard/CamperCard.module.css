@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   gap: 24px;
-  width: 888px;
+  max-width: 888px;
   height: 358px;
   padding: 24px;
   border-radius: 20px;
@@ -27,7 +27,7 @@
 
 .title {
   margin-bottom: 8px;
-  width: 320px;
+  max-width: 320px;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;

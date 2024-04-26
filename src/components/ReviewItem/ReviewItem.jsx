@@ -9,33 +9,24 @@ export const ReviewItem = ({ review }) => {
     const stars = [];
 
     for (let i = 0; i < 5; i++) {
-      let star;
-      if (i < Math.floor(reviewer_rating)) {
-        star = (
-          <svg
-            className={`${styles.starIcon} ${styles.painted}`}
-            width="16"
-            height="16"
-          >
-            <use xlinkHref={`${sprite}#star`} />
-          </svg>
-        );
-      } else {
-        star = (
-          <svg className={`${styles.starIcon}`} width="16" height="16">
-            <use xlinkHref={`${sprite}#star`} />
-          </svg>
-        );
-      }
-
-      stars.push(star);
+      stars.push(
+        <svg
+          className={`${styles.starIcon} ${
+            i < Math.floor(reviewer_rating) && styles.painted
+          }`}
+          width="16"
+          height="16"
+        >
+          <use xlinkHref={`${sprite}#star`} />
+        </svg>
+      );
     }
 
     return stars;
   };
 
   return (
-    <div>
+    <>
       <div className={styles.reviewTop}>
         <div className={styles.avatar}>
           <span>{reviewer_name.charAt(0)}</span>
@@ -50,6 +41,6 @@ export const ReviewItem = ({ review }) => {
         </div>
       </div>
       <div className="description">{comment}</div>
-    </div>
+    </>
   );
 };

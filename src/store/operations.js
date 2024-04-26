@@ -6,7 +6,7 @@ import { BASE_URL, ITEMS_PER_PAGE } from './constants';
 axios.defaults.baseURL = BASE_URL;
 
 export const fetchCampers = createAsyncThunk(
-  'campers/fetchAll',
+  'campers/fetchPage',
   async (page, thunkAPI) => {
     try {
       const response = await axios.get('/campers', {

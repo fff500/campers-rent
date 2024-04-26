@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import { CamperCard } from '../CamperCard/CamperCard';
 import { Button } from '../ui-kit/Button/Button';
+import { CamperCard } from '../CamperCard/CamperCard';
 import { getPage, getShowLoadMoreButton } from '../../store/selectors';
 import { fetchCampers } from '../../store/operations';
 

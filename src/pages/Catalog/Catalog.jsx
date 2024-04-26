@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { CampersList } from '../../components/CampersList/CampersList';
 import { CampersFilter } from '../../components/CampersFilter/CampersFilter';
-import { useApplayFilters } from '../../hooks/useApplayFilters';
+import { useApplyFilters } from '../../hooks/useApplayFilters';
 import { fetchCampers } from '../../store/operations';
 import { getPage } from '../../store/selectors';
 
@@ -12,7 +12,7 @@ import styles from './Catalog.module.css';
 const Catalog = () => {
   const dispatch = useDispatch();
   const page = useSelector(getPage);
-  const campersToShow = useApplayFilters();
+  const campersToShow = useApplyFilters();
 
   useEffect(() => {
     dispatch(fetchCampers(page));

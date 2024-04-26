@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { getCampers, getLocationFilterQuery } from '../store/selectors';
 
-export const useApplayFilters = () => {
+export const useApplyFilters = () => {
   const campers = useSelector(getCampers);
   const locationFilterQuery = useSelector(getLocationFilterQuery);
 

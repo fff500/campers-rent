@@ -44,7 +44,7 @@ export const CamperCard = ({ camper }) => {
         <div className={styles.imageContainer}>
           <img
             src={gallery[0] || defaultImage}
-            alt="Camper title"
+            alt="Camper"
             className={styles.image}
           />
         </div>

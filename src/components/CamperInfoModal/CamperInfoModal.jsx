@@ -24,7 +24,7 @@ export const CamperInfoModal = ({ camper }) => {
           <div className={styles.imageContainer} key={`${_id}_image_${index}`}>
             <img
               src={item || defaultImage}
-              alt="Camper title"
+              alt="Camper"
               className={styles.image}
             />
           </div>
